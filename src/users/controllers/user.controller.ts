@@ -1,22 +1,23 @@
 import { Controller, Get } from '@nestjs/common';
-import { UserService } from './user.service';
+import { UserService } from '../services/user.service';
+import { UserAge, UserColor, UserName } from '../constants';
 
 @Controller('/users')
 export class UserController {
   constructor(private readonly appService: UserService) {}
 
   @Get('user-color')
-  getUserColor(): string[] {
+  getUserColor(): UserColor {
     return this.appService.getUsersColor();
   }
 
   @Get('user-name')
-  getUserName(): string[] {
+  getUserName(): UserName {
     return this.appService.getUsersName();
   }
 
   @Get('user-age')
-  getUserAge(): string[] {
+  getUserAge(): UserAge {
     return this.appService.getUsersAge();
   }
 }
