@@ -17,7 +17,7 @@ export class UserController {
   }
 
   @Get('user-age')
-  getUserAge(): UserAge {
+  getUserAge(): (UserAge.USER1 | UserAge.USER2)[] {
     return this.appService.getUsersAge();
   }
 }

@@ -11,7 +11,7 @@ export class UserService {
     return UserName.USER2;
   }
 
-  getUsersAge(): UserAge {
-    return UserAge.USER2;
+  getUsersAge(): (UserAge.USER1 | UserAge.USER2)[] {
+    return [UserAge.USER1, UserAge.USER2];
   }
 }
